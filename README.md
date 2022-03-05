@@ -219,7 +219,7 @@ https://archlinux.org/download/
 
 - $ `arch-chroot /mnt` to enter in your Arch install to set it up
 
-### 8.Seting timezone
+### 8.Setting timezone
 
 - $ `ln -sf /usr/share/zoneinfo/*Europe*/*Madrid* /etc/localtime` set your timezone 
 
