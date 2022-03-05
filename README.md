@@ -50,13 +50,13 @@ https://archlinux.org/download/
  -Games: `Lutris, RetroArch, Super Tux Kart ;)`
  
  ## Archlinux install
-    1.Boot ArchLinux ISO on your system
+   1.Boot ArchLinux ISO on your system
         Once in ArchLinux Grub select ArchLinux install
 
-    2.Check if Uefy mode enabled
+   2.Check if Uefy mode enabled
         `ls /sys/firmware/efi/efivars`
     
-    3.Internet Connection
+   3.Internet Connection
         If you use Ethernet rj45 connection you dont need any configuration
         To setup a wireless network you need use `iwctl`
         iwtcl step by step to connect to a WPA 
@@ -67,7 +67,7 @@ https://archlinux.org/download/
             5. $ `station *device* connect *SSID*` Connect to a specific SSID, on SSID write the network you want to connect
             6.    Finally write $ `exit` to back to root user and write $`ping 8.8.8.8` to test your connection
      
-      4. Btrfs FileSystem config
+   4. Btrfs FileSystem config
         Before to start with the partitioning we must make sure that the device only have one partition
         to manage partitions we use `fdisk`
             1.$ `fdisk -l` use this command to look at your file strutcture and find the name of the partition where you want to insall Archlinux on
@@ -88,14 +88,12 @@ https://archlinux.org/download/
                 - Partition 1 (/boot)
                     . Partition number= 1
                     . First sector= default
-                    . Last sector= +300MB
-                
+                    . Last sector= +300M
                 - Partition 2 (/swap)
                     . Partition number= 2
                     . First sector= default
                     . Last sector= +16GB `To calculate your swap space do (RAM GB * 2)`
-                
-                - Partition 3 (/root)
+                 - Partition 3 (/root)
                     . Partition number= 3
                     . First sector= default
                     . Last sector= remaining space
