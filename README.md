@@ -304,7 +304,7 @@ https://archlinux.org/download/
 ```
 ### 2. Installing Pamac and Gnome 
  
- - Installing my personal script how install pamac, yay and gnome interface 
+ - Installing my personal script which install pamac, yay and gnome interface 
 ```
   - 1.$ `cd /home/*jose*` move into your home directory
   
@@ -337,7 +337,7 @@ https://archlinux.org/download/
 ```
 ### 5. Installing apps
 
-- Installing my personal script how install pamac, yay and gnome interface 
+- Installing my personal script which install my personal app list
 ```  
   - 1. Open gnome terminal and write $`cd /home/jose/ArchLinux-config-and-post-install-/` to move into folder script
  
