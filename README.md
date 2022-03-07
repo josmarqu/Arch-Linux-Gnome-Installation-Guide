@@ -273,6 +273,8 @@ https://archlinux.org/download/
   - 1.$ `pacman -S networkmanager` to install network manager
 
   - 2.$ `systemctl enable NetworkManager` to enable network manager at system boot
+  
+  - 3.$ `pacman -S dhcpcd iwd` you need it if you want to use wifi
 ```
 
 ### 15.Restarting into Arch
@@ -281,3 +283,16 @@ https://archlinux.org/download/
   - 2.$ `umount -l /mnt` unmounting all drives
   - 3.$ `reboot` to reboot the system, when the system wake enter into bios and you can boot arch booting your drive
   - 4.$ Search grub.efi into Efi directory and select to default boot system in Bios settings 
+```
+
+### 16.Post Install
+
+- Once booted archlinux is time to realiza the post install
+```
+  - 1.$ `dhcpcd`  to active wireless dhcpcd
+  
+  - 2.$ `dhcpcd *wlan0*` replace *wlan0* with your wireless card devince name, to find out wich one is use ip link
+  
+  - 3.$ `iwctl` to connect to wpa, if you dont remember how iwctl works go back to 3th step
+  
+  
