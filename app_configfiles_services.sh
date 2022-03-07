@@ -14,6 +14,7 @@ systemctl start virtnetworkd
 pamac install chromium
 pamac install microsoft-edge-stable-bin
 pamac install thunderbird
+pamac install spotify
 pamac install discord
 pamac install libreoffice
 pamac install gimp
