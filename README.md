@@ -321,8 +321,22 @@ https://archlinux.org/download/
   
   - 4.$ `sudo fc-cache -f -v`
 ```
-### 4. Install Apps
- 
+### 4. Preparing pamac for the script
 
- 
+ ```
+  - 1. search into gnome apps for an app called add/remove software 
   
+  - 2. once opened add/remove software click into the options points on the top right and click preferences
+  
+  - 3. activate the aur third party
+  
+  - 4. comeback to the option ooints and click refresh data base
+```
+### 5. Installing apps
+
+- Installing my personal script how install pamac, yay and gnome interface 
+```  
+  - 1. Open gnome terminal and write $`cd /home/jose/ArchLinux-config-and-post-install-/` to move into folder script
+ 
+ - 2.$ `sudo bash app_configfiles_services.sh` to run the script
+```
