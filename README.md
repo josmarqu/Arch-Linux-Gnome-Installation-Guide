@@ -19,11 +19,13 @@ https://archlinux.org/download/
 
 -Power Saving utility: `tlp`
 
+-Gui Governor: `cpupower-gui-git`
+
 -Display Server Protocol:` Wayland`
 
--GUI: `Gnome`
+-GUI: `Gnome` `QTILE`
 
--GUI: `Qtile`
+-GNOME EXTENSION: `vitals`
 
 -Text Editor: `VIM`
 
@@ -45,7 +47,7 @@ https://archlinux.org/download/
 
 -Image Editor: `Gimp`
 
--Bootable Utility: `Ventoy, Balena Etcher`
+-Bootable Utility: `Ventoy`
 
 -Games: `Lutris, RetroArch, Super Tux Kart ;)`
 
@@ -285,7 +287,9 @@ https://archlinux.org/download/
   - 4.$ Search grub.efi into Efi directory and select to default boot system in Bios settings 
 ```
 
-### 16.Post Install
+## ArchLinux Post Install
+
+### 1. Wifi setup (only if you have wireless card)
 
 - Once booted archlinux is time to realiza the post install
 ```
@@ -294,5 +298,31 @@ https://archlinux.org/download/
   - 2.$ `dhcpcd *wlan0*` replace *wlan0* with your wireless card devince name, to find out wich one is use ip link
   
   - 3.$ `iwctl` to connect to wpa, if you dont remember how iwctl works go back to 3th step
+```
+### 2. Installing Pamac and Gnome 
+ 
+ - Installing my personal script how install pamac, yay and gnome interface 
+```
+  - 1.$ `cd /home/*jose*` move into your home directory
   
+  - 2.$ `git clone https://github.com/josemarquezmontoro/ArchLinux-config-and-post-install-.git` cloning my git repository where scripts are saved
+  
+  - 3.$ `cd ArchLinux-config-and-post-install-/` move into my git repository
+  
+  - 4.$ `bash yay_pamac_gnome.sh` to run my script
+```
+### 3. Fix Gnome Terminal
+```
+  - 1.$ `sudo locale-gen --purge`  
+  
+  - 2.$ `sudo locale-gen`
+  
+  - 3.$ `localectl set-locale LANG="en_US.UTF-8"`
+  
+  - 4.$ `sudo fc-cache -f -v`
+```
+### 4. Install Apps
+ 
+
+ 
   
