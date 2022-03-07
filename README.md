@@ -282,8 +282,11 @@ https://archlinux.org/download/
 ### 15.Restarting into Arch
 ```
   - 1.$ `exit` exiting the installation
+  
   - 2.$ `umount -l /mnt` unmounting all drives
+  
   - 3.$ `reboot` to reboot the system, when the system wake enter into bios and you can boot arch booting your drive
+  
   - 4.$ Search grub.efi into Efi directory and select to default boot system in Bios settings 
 ```
 
@@ -338,5 +341,5 @@ https://archlinux.org/download/
 ```  
   - 1. Open gnome terminal and write $`cd /home/jose/ArchLinux-config-and-post-install-/` to move into folder script
  
- - 2.$ `sudo bash app_configfiles_services.sh` to run the script
+  - 2.$ `sudo bash app_configfiles_services.sh` to run the script
 ```
