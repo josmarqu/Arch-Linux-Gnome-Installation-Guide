@@ -22,3 +22,4 @@ pamac install ventoy-bin
 pamac install lutris
 pamac install retroarch
 pamac install cpupower-gui
+pamac install gnome-tweaks
