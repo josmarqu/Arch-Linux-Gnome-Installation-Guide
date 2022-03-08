@@ -21,5 +21,6 @@ pamac install gimp
 pamac install ventoy-bin
 pamac install lutris
 pamac install retroarch
+pamac install steam
 pamac install cpupower-gui
 pamac install gnome-tweaks
