@@ -21,6 +21,8 @@ pamac install gimp
 pamac install ventoy-bin
 pamac install lutris
 pamac install retroarch
-pamac install steam
 pamac install cpupower-gui
 pamac install gnome-tweaks
+sed -i 's/#[multilib-testing]/[multilib-testing]/g' /etc/pacman.d/mirrorlist
+sed -i 's/#Include = /etc/pacman.d/mirrorlist/Include = /etc/pacman.d/mirrorlist/g' /etc/pacman.d/mirrorlist
+pacman -S steam
