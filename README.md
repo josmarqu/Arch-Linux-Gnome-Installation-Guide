@@ -49,7 +49,7 @@ https://archlinux.org/download/
 
 -Bootable Utility: `Ventoy`
 
--Games: `Lutris, RetroArch, Super Tux Kart ;)`
+-Games: `Lutris, RetroArch, Steam`
 
 ## Archlinux install
 ### 1.Boot ArchLinux ISO on your system
