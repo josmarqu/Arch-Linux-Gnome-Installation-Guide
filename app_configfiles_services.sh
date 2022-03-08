@@ -23,6 +23,6 @@ pamac install lutris
 pamac install retroarch
 pamac install cpupower-gui
 pamac install gnome-tweaks
-sed -i 's/#[multilib-testing]/[multilib-testing]/g' /etc/pacman.d/mirrorlist
-sed -i 's/#Include = /etc/pacman.d/mirrorlist/Include = /etc/pacman.d/mirrorlist/g' /etc/pacman.d/mirrorlist
+sed -i 's/#[multilib-testing]/[multilib-testing]/g' /etc/pacman.conf
+sed -i 's/#Include = /etc/pacman.d/mirrorlist/Include = /etc/pacman.d/mirrorlist/g' /etc/pacman.conf
 pacman -S steam
