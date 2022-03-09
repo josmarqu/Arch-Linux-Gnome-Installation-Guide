@@ -333,7 +333,7 @@ https://archlinux.org/download/
   
   - 3. activate the aur third party
   
-  - 4. comeback to the option ooints and click refresh data base
+  - 4. comeback to the option points and click refresh data base
 ```
 ### 5. Installing apps
 
