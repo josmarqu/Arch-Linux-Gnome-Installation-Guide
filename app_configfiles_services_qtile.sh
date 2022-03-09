@@ -30,3 +30,4 @@ sed -i   "$numbline2 s/#/ /" /etc/pacman.conf
 sed -i .stop.
 pacman -Sy
 pacman -S steam
+pamac install qtile python-dbus-next python-pywlroots
