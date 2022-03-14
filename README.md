@@ -343,3 +343,6 @@ https://archlinux.org/download/
  
   - 2.$ `sudo bash app_configfiles_services.sh` to run the script
 ```
+## ArchLinux Update
+
+- `sudo pacman -Syu` this will update the pacman repositories for package updates 
