@@ -32,3 +32,4 @@ pacman -Sy
 pacman -S steam
 pamac install qtile python-dbus-next python-pywlroots
 pamac install gdm-settings-git
+pamac install marker
