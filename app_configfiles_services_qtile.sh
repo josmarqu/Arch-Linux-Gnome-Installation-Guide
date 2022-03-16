@@ -11,6 +11,9 @@ pamac install virt-manager
 pamac install qemu
 systemctl enable virtnetworkd
 systemctl start virtnetworkd
+pamac install dnsmasq
+systemctl enable dnsmasq
+systemctl start dnsmasq
 pamac install chromium
 pamac install microsoft-edge-stable-bin
 pamac install thunderbird
