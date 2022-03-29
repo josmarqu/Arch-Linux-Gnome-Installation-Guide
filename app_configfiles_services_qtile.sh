@@ -23,7 +23,6 @@ pamac install libreoffice
 pamac install gimp
 pamac install ventoy-bin
 pamac install lutris
-pamac install retroarch
 pamac install cpupower-gui
 pamac install gnome-tweaks
 numbline1=(grep -n -F "#[multilib]" /etc/pacman.conf | cut -f1 -d:)
