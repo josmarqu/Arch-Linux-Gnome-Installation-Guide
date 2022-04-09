@@ -21,6 +21,7 @@ pamac install spotify
 pamac install discord
 pamac install libreoffice
 pamac install gimp
+pamac install etcher-bin
 pamac install ventoy-bin
 pamac install cpupower-gui
 pamac install gnome-tweaks
