@@ -24,11 +24,6 @@ pamac install gimp
 pamac install ventoy-bin
 pamac install cpupower-gui
 pamac install gnome-tweaks
-numbline1=(grep -n -F "#[multilib]" /etc/pacman.conf | cut -f1 -d:)
-numbline2=$((numbline1+2))
-sed -i   "$numbline1 s/#/ /" /etc/pacman.conf
-sed -i   "$numbline2 s/#/ /" /etc/pacman.conf
-sed -i .stop.
 pacman -Sy
 pacman -S steam
 pamac install qtile python-dbus-next python-pywlroots
