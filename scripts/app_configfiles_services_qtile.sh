@@ -28,5 +28,7 @@ pamac install gnome-tweaks
 pacman -Sy
 pacman -S steam
 pamac install qtile python-dbus-next python-pywlroots
+pacman -S alsa-utils
+amixer sset Master unmute
 pamac install gdm-settings-git
 pamac install marker
