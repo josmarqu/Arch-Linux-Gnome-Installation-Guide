@@ -59,6 +59,7 @@ https://archlinux.org/download/
 ### 2.Check if Uefy mode enabled
 
 - `ls /sys/firmware/efi/efivars`
+- If the directory is empty mean that your system is running legacy mody, instead if have files mean that your system is in Uefy mode.
 
 ### 3.Internet Connection
 
@@ -82,7 +83,7 @@ https://archlinux.org/download/
 ```
 ### 4.Btrfs FileSystem config
 
-- Before to start with the partitioning we must make sure that the device only have one partition
+- Before to start with the partitioning we must make sure that the device only have no one partition, if not you can use fdisk utility to format disk
 
 - To manage partitions we use `fdisk`
 ```
@@ -168,6 +169,8 @@ https://archlinux.org/download/
 - Btrfs Features Personal setup
 ```
   - 15. Create the following Subvolume scheme
+    - $ `sudo mount /dev/*sda3* /mnt mount btrfs partition in the mnt directory
+    
 
     - $ `btrfs su cr /mnt/@`
   
