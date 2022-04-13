@@ -9,6 +9,7 @@ pamac install visual-studio-code-bin
 pamac install eclipse-java
 pamac install virt-manager
 pamac install qemu
+pacman -S net-tools
 systemctl enable virtnetworkd
 systemctl start virtnetworkd
 pamac install dnsmasq
