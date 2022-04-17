@@ -23,7 +23,7 @@ https://archlinux.org/download/
 
 -Display Server Protocol:` Wayland`
 
--GUI: `Gnome` `QTILE`
+-GUI: `Gnome` `Sway`
 
 -GNOME EXTENSION: `vitals`
 
