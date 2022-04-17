@@ -294,7 +294,22 @@ https://archlinux.org/download/
 
 ## ArchLinux Post Install
 
-### 1. Wifi setup (only if you have wireless card)
+### 1. Fix Gnome Terminal
+```
+  - 1.   control + alt + F3, enter into tty3 
+ 
+  - 2.$ `sudo locale-gen --purge`  
+  
+  - 3.$ `sudo locale-gen`
+  
+  - 4.$ `localectl set-locale LANG="en_US.UTF-8"`
+  
+  - 5.$ `sudo fc-cache -f -v`
+  
+  - 6.$ `reboot` to reboot the system
+```
+
+### 2. Wifi setup (only if you have wireless card)
 
 - Once booted archlinux is time to realiza the post install
 ```
@@ -304,7 +319,18 @@ https://archlinux.org/download/
   
   - 3.$ `iwctl` to connect to wpa, if you dont remember how iwctl works go back to 3th step
 ```
-### 2. Installing Pamac and Gnome 
+
+### 3. Nvidia drivers setup (only if you have nvidia graphic)
+
+- Once booted archlinux is time to realiza the post install
+```
+  - 1.$ `pacman -Syu nvidia` to install nvidia drivers
+  
+  - 2.$ `pacman -Syu nvidia-settings` to install nvidia driver configuration tool
+  
+  - 3.$ `reboot` to reboot the system
+```
+### 4. Installing Pamac and Gnome 
  
  - Installing my personal script which install pamac, yay and gnome interface 
 ```
@@ -318,17 +344,8 @@ https://archlinux.org/download/
   
   - 4.$ `bash yay_pamac_gnome.sh` to run my script
 ```
-### 3. Fix Gnome Terminal
-```
-  - 1.$ `sudo locale-gen --purge`  
-  
-  - 2.$ `sudo locale-gen`
-  
-  - 3.$ `localectl set-locale LANG="en_US.UTF-8"`
-  
-  - 4.$ `sudo fc-cache -f -v`
-```
-### 4. Preparing pamac for the script
+
+### 5. Preparing pamac for the script
 
  ```
   - 1. search into gnome apps for an app called add/remove software 
@@ -339,7 +356,7 @@ https://archlinux.org/download/
   
   - 4. comeback to the option points and click refresh data base
 ```
-### 5. Installing apps
+### 6. Installing apps
 
 - Installing my personal script which install my personal app list
 ```  
