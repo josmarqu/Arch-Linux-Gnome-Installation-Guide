@@ -310,6 +310,8 @@ https://archlinux.org/download/
 ```
   - 1.$ `cd /home/*jose*` move into your home directory
   
+  - 3.$ `pacman -S git` to install git
+  
   - 2.$ `git clone https://github.com/josemarquezmontoro/ArchLinux-config-and-post-install-.git` cloning my git repository where scripts are saved
   
   - 3.$ `cd ArchLinux-config-and-post-install-/` move into my git repository
