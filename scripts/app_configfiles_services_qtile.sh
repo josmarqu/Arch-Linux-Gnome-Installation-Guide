@@ -29,5 +29,6 @@ pamac install cpupower-gui
 pamac install gnome-tweaks
 pacman -Sy
 pacman -S steam
+pamac install gnome-screenshot
 pamac install gdm-settings-git
 pamac install marker
