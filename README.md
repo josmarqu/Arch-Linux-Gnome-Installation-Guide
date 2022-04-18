@@ -372,15 +372,16 @@ https://archlinux.org/download/
 ```  
   - 1.$  `sudo nano /usr/sbin/update-grub` to create update-grub script
   
+  - 2.$ write bellow lines
     - #!/bin/sh
-     et -e
-      exec grub-mkconfig -o /boot/grub/grub.cfg "$@"
+    - set -e
+    - exec grub-mkconfig -o /boot/grub/grub.cfg "$@"
   
-  - 2.$ ` sudo chown root:root /usr/sbin/update-grub`changing file ownership
+  - 2.$ `sudo chown root:root /usr/sbin/update-grub` changing file ownership
   
   - 3.$ `sudo chmod 755 /usr/sbin/update-grub` changing file permissions
   
-  - 4.
+  - 4.$ `sudo update-grub` to run update-grub script
 ```
 ## ArchLinux Update
 
