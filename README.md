@@ -348,6 +348,7 @@ https://archlinux.org/download/
 
 ### 5. Preparing pamac for the script
 
+- If you want to see the applications to be installed have a look at the features section at the beginning of the readme
  ```
   - 1. search into gnome apps for an app called add/remove software 
   
@@ -360,10 +361,13 @@ https://archlinux.org/download/
 ### 6. Installing apps
 
 - Installing my personal script which install my personal app list
+- If you want to see the applications to be installed have a look at the features section at the beginning of the readme
 ```  
   - 1. Open gnome terminal and write $`cd /home/jose/ArchLinux-config-and-post-install-/` to move into folder script
- 
-  - 2.$ `sudo bash app_configfiles_services.sh` to run the script
+  
+  - 2. Tlp will be configured to use powersave governor (recommended for laptops), if u want to change edit file using nano.
+  
+  - 3.$ `sudo bash app_configfiles_services.sh` to run the script
 ```
 ## ArchLinux Update
 
