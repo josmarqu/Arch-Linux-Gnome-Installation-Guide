@@ -367,6 +367,21 @@ https://archlinux.org/download/
   
   - 3.$ `sudo bash app_configfiles_services.sh` to run the script
 ```
+
+### 7. Adding Windows boot to group (only if you have windows installed)
+```  
+  - 1.$  `sudo nano /usr/sbin/update-grub` to create update-grub script
+  
+    - #!/bin/sh
+     et -e
+      exec grub-mkconfig -o /boot/grub/grub.cfg "$@"
+  
+  - 2.$ ` sudo chown root:root /usr/sbin/update-grub`changing file ownership
+  
+  - 3.$ `sudo chmod 755 /usr/sbin/update-grub` changing file permissions
+  
+  - 4.
+```
 ## ArchLinux Update
 
 - `sudo pacman -Syu` this will update the pacman repositories for package updates 
