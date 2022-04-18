@@ -45,7 +45,7 @@ https://archlinux.org/download/
 
 -Image Editor: `Gimp`
 
--Bootable Utility: `Ventoy`
+-Bootable Utility: `Ventoy, Balena Etcher`
 
 -Games: `Steam`
 
