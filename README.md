@@ -294,22 +294,9 @@ https://archlinux.org/download/
 
 ## ArchLinux Post Install
 
-### 1. Fix Gnome Terminal
-```
-  - 1.   control + alt + F3, enter into tty3 
- 
-  - 2.$ `sudo locale-gen --purge`  
-  
-  - 3.$ `sudo locale-gen`
-  
-  - 4.$ `localectl set-locale LANG="en_US.UTF-8"`
-  
-  - 5.$ `sudo fc-cache -f -v`
-  
-  - 6.$ `reboot` to reboot the system
-```
 
-### 2. Wifi setup (only if you have wireless card)
+
+### 1. Wifi setup (only if you have wireless card)
 
 - Once booted archlinux is time to realiza the post install
 ```
@@ -320,7 +307,7 @@ https://archlinux.org/download/
   - 3.$ `iwctl` to connect to wpa, if you dont remember how iwctl works go back to 3th step
 ```
 
-### 3. Nvidia drivers setup (only if you have nvidia graphic)
+### 2. Nvidia drivers setup (only if you have nvidia graphic)
 
 - Once booted archlinux is time to realiza the post install
 ```
@@ -330,7 +317,7 @@ https://archlinux.org/download/
   
   - 3.$ `reboot` to reboot the system
 ```
-### 4. Installing Pamac and Gnome 
+### 3. Installing Pamac and Gnome 
  
  - Installing my personal script which install pamac, yay and gnome interface 
 ```
@@ -343,6 +330,20 @@ https://archlinux.org/download/
   - 3.$ `cd ArchLinux-config-and-post-install-/` move into my git repository
   
   - 4.$ `bash yay_pamac_gnome.sh` to run my script
+```
+### 4. Fix Gnome Terminal
+```
+  - 1.   control + alt + F3, enter into tty3 
+ 
+  - 2.$ `sudo locale-gen --purge`  
+  
+  - 3.$ `sudo locale-gen`
+  
+  - 4.$ `localectl set-locale LANG="en_US.UTF-8"`
+  
+  - 5.$ `sudo fc-cache -f -v`
+  
+  - 6.$ `reboot` to reboot the system
 ```
 
 ### 5. Preparing pamac for the script
