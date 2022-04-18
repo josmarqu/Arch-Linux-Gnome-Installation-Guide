@@ -2,3 +2,4 @@
 pamac install chrome-gnome-shell
 pamac install adwaita-dark-darose
 pamac install papirus-icon-theme
+pamac install material-cursors-git
