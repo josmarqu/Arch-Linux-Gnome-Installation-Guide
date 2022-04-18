@@ -33,8 +33,6 @@ https://archlinux.org/download/
 
 -Virtualization tool: `Kvm, Qemu, Virt-Manager`
 
--Virtual Machines: `Windows 10 ltsc, Mac Os Monterey`
-
 -Browser: Microsoft `Edge, Chromium`
 
 -Email Client: `Thunderbird`
