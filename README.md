@@ -387,6 +387,14 @@ https://archlinux.org/download/
   
   - 6.$ `sudo update-grub` to run update-grub script
 ```
+
+### 8. Adding more languages and keybord layouts
+```
+  - 1.$ `sudo nano /etc/locale.gen and uncomment the language which you want to install
+  
+  - 2.$ `locale-gen` to generate the locales. Once you did it you can enable the language added in gnome settings
+```
+
 ## ArchLinux Update
 
 - `sudo pacman -Syu` this will update the pacman repositories for package updates 
