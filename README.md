@@ -13,7 +13,7 @@ https://archlinux.org/download/
 
 -System Backups: `Btrfs snaphsots`
 
--Terminal:
+-Terminal: `Gnome`
 
 -Package Manager: `pacman, pamac, aur`
 
