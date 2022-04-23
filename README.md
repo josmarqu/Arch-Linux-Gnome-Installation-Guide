@@ -381,7 +381,11 @@ https://archlinux.org/download/
   
   - 3.$ `sudo chmod 755 /usr/sbin/update-grub` changing file permissions
   
-  - 4.$ `sudo update-grub` to run update-grub script
+  - 4.$ `sudo pacman -S os-prober`  utility that is used to find installed os in your system
+  
+  - 5.$ `sudo nano /etc/default/grub` uncomment GRUB_DISABLE_OS_PROBER=false and modify timeout from 5 to 30
+  
+  - 6.$ `sudo update-grub` to run update-grub script
 ```
 ## ArchLinux Update
 
