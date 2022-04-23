@@ -1,6 +1,6 @@
 # IMWHEEL
 
-## Imwheel is a IMWheel is a tool for tweaking mouse wheel behavior
+## IMWheel is a tool for tweaking mouse wheel behavior
 
 ## I use it to increase the scroll speed on the mouse
 
