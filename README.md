@@ -25,7 +25,7 @@ https://archlinux.org/download/
 
 -GUI: `Gnome` `Sway`
 
--GNOME EXTENSION: `vitals`
+-GNOME EXTENSION: `vitals` `dash to dock` `app indicator`
 
 -Text Editor: `VIM`
 
@@ -394,6 +394,8 @@ https://archlinux.org/download/
   
   - 2.$ `locale-gen` to generate the locales. Once you did it you can enable the language added in gnome settings
 ```
+
+
 
 ## ArchLinux Update
 
