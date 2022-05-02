@@ -2,7 +2,7 @@
 
 ## IMWheel is a tool for tweaking mouse wheel behavior
 
-## I use it to increase the scroll speed on the mouse
+## I use it to increase the scroll speed on the mouse ZowieFK1
 
 ### Install imwheel tool
 - $`pacman -S imwheel`
