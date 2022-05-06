@@ -187,16 +187,6 @@ https://archlinux.org/download/
      
     - $ `mount -o noatime,compress=zstd,discard=async,subvol=@.snapshots /dev/*sda3* /mnt/.snapshots`
 
-      - Mount options used brief explanation
-
-        - noatime : No access time, Improves system performances by not writing time when the file was accesed
-
-        - compress=zstd : Chosing the algorithm for compress. I have zstd as it has good compression level and speed
-  
-        - discard= async : ONLY USE IF YOU SYSTEM PARTITION IS MOUNTED ON A SSD DEVICE, enable discarding of freed file blocks improving performance
-
-        - subvol : Choosing the subvol to mount.
-
   - 19.$ `mount /dev/*sda1* /mnt/boot` mount boot partition
 
   - 20.$ `lsblk` verify that you have mounted everything correctly  
