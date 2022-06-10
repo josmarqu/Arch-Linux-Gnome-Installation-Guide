@@ -81,7 +81,7 @@ https://archlinux.org/download/
 ```
 ### 4.Btrfs FileSystem config
 
-- Before to start with the partitioning we must make sure that the device only have no one partition, if not you can use fdisk utility to format disk
+- Before to start with the partitioning we must make sure that the device  have no one partition, if not you can use fdisk utility to format disk
 
 - To manage partitions we use `fdisk`
 ```
