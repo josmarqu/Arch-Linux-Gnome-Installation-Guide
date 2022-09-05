@@ -118,21 +118,13 @@ https://archlinux.org/download/
   - 12.$ `mkfs.fat -F32 /dev/*sda1*` make fat32 file system, replace *sda1* with your device name used for (/boot) 
   - 13.$ `mkswap /dev/sda2` ; swapon /dev/*sda2*` make swap file system, replace *sda2* with your device name used for (/swap)
   - 14.$ `mkfs.ext4 /dev/*sda3*` make ext4 file system, replace *sda3* with your device name used for (/(root))
-```
-
-  - 17.$ `mkdir -nt  reate folder where boot partition will be mounted
-
-  - 19.$ `mount /dev/*sda1* /mnt/boot` mount boot partition
-
-  - 20.$ `lsblk` verify that you have mounted everything correctly  
+  - 15.$ `mount /dev/sda3 /mnt` mount the root volume to /mnt
+  - 16.$ `mount --mkdir /dev/*sda1* /mnt/boot` mount boot partition
+  - 17.$ `lsblk` verify that you have mounted everything correctly  
 ```
 ### 5.Installing the base system
 
-- For Intel CPUs: $ `pacstrap /mnt base linux linux-firmware nano intel-ucode btrfs-progs`
-
-- For Amd Cpus: $ `pacstrap /mnt base linux linux-firmware nano amd-ucode btrfs-progs`
-
-- For VMs: $ `pacstrap /mnt base linux linux-firmware nano btrfs-progs`
+`$ pacstrap /mnt base linux linux-firmware`
 
 ### 6.Generate fstab
 
@@ -144,7 +136,7 @@ https://archlinux.org/download/
 ```
 ### 7.Chroot into install
 
-- $ `arch-chroot /mnt` to enter in your Arch install to set it up
+- $ `arch-chroot /mnt` enter in your Arch install to set it up
 
 ### 8.Setting timezone
 
@@ -152,15 +144,15 @@ https://archlinux.org/download/
 
 ### 9.Network configuration
 ```
-  - 1.$ `echo *JosePc* >> /etc/hostname` to replace your hostname
-
+  - 1.$ `echo *JosePc* >> /etc/hostname` replace your hostname
+  
+  - 2.$ `pacman -Syu nano`  install nano text editor
+  
   - 2.$ ` nano /etc/hosts`  edit host configuration adding the following lines
 
     - 127.0.0.1     localhost
 
     - ::1           localhost
-
-    - 127.0.1.1     myhostname.localdomain myhostname
 
   - 3. Save the file and exit 
 ```
@@ -168,40 +160,37 @@ https://archlinux.org/download/
 
 - $`passwd`
 
-### 11.Adding btrfs module to mkinitcpio
+### 11.Installing GRUB
 ```
-  - 1.$ `nano /etc/mkinitcpio.conf` and add MODULES=(btrfs) bellow to #MODULES=(piix ide_disk reiserfs), then save and exit
-
-  - 2.$ `mkinitcpio -p linux` to recreate the image
-```
-### 12.Installing GRUB
-```
-  - 1.$ `pacman -S grub grub-btrfs` to download grub
+  - 1.$ `pacman -S grub` download grub
   
-  - 3.$ `pacman -S efibootmgr` to install efi boot manager
+  - 3.$ `pacman -S efibootmgr`  install efi boot manager
  
   - 4.$ `grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id = Arch` to install grub
 
-  - 5.$ `grub-mkconfig -o /boot/grub/grub.cfg` to generate grub config file
+  - 5.$ `grub-mkconfig -o /boot/grub/grub.cfg`  generate grub config file
 ```
-### 13.Creating user
+### 12.Creating user
 ```
   - 1.$ `useradd -mg wheel *jose*` adding user
   
   - 2.$ `passwd jose` giving  a password
 
-  - 3.$ `pacman -S sudo` to install sudo 
+  - 3.$ `pacman -S sudo` install sudo 
   
   - 4.$ `nano /etc/sudoers` and inside uncomment the line which says %wheel ALL=(ALL) ALL, then save and exit
 ```
 
 ### 14.Install and enable NetworkManager
 ```
-  - 1.$ `pacman -S networkmanager` to install network manager
+  - 1.$ `pacman -S networkmanager` install network manager
 
-  - 2.$ `systemctl enable NetworkManager` to enable network manager at system boot
+  - 2.$ `systemctl enable NetworkManager` enable network manager at system boot
   
   - 3.$ `pacman -S dhcpcd iwd` you need it if you want to use wifi
+  
+  - 4.$ `systemctl enable iwd` you need it if you want to use wifi
+  
 ```
 
 ### 15.Restarting into Arch
@@ -228,32 +217,54 @@ https://archlinux.org/download/
   - 2.$ `dhcpcd *wlan0*` replace *wlan0* with your wireless card devince name, to find out wich one is use ip link
   
   - 3.$ `iwctl` to connect to wpa, if you dont remember how iwctl works go back to 3th step
+  
+  - 4.$ `sudo nano /etc/iwd/main.conf` write the bellow text to make the dhcp config
+     [General]
+     EnableNetworkConfiguration=true
+
+     [Network]
+     NameResolvingService=systemd
 ```
 
 ### 2. Nvidia drivers setup (only if you have nvidia graphic)
 
 - Once booted archlinux is time to realiza the post install
 ```
-  - 1.$ `pacman -Syu nvidia` to install nvidia drivers
+  - 1.$ `pacman -Syu nvidia` install nvidia drivers
   
-  - 2.$ `pacman -Syu nvidia-settings` to install nvidia driver configuration tool
+  - 2.$ `pacman -Syu nvidia-settings`  install nvidia driver configuration tool
   
-  - 3.$ `reboot` to reboot the system
+  - 3.$ `reboot` reboot the system
 ```
-### 3. Installing Pamac and Gnome 
+### 3. Installing yay, Pamac and Gnome 
  
  - Installing my personal script which install pamac, yay and gnome interface 
 ```
-  - 1.$ `cd /home/*jose*` move into your home directory
+  - 1.$ `sudo pacman -S  base-devel` install essential packages
   
-  - 3.$ `pacman -S git` to install git
+  - 2.$ `cd /var/cache/pacman/pkg`  direct  where the pacman packages are stored 
   
-  - 2.$ `git clone https://github.com/josemarquezmontoro/ArchLinux-config-and-post-install-.git` cloning my git repository where scripts are saved
+  - 3.$ `sudo mkdir /var/cache/pacman/pkg/yay` create a folder where yay will be stored  
   
-  - 3.$ `cd ArchLinux-config-and-post-install-/` move into my git repository
+  - 4.$ `sudo pacman -Syu git` install git
   
-  - 4.$ `bash yay_pamac_gnome.sh` to run my script
+  - 5.$ `sudo git clone https://aur.archlinux.org/yay.git` clone yay data to later install it
+  
+  - 6.$ `sudo chown -R *jose*:users /var/cache/pacman/pkg/yay` give yay folder permissions for install the package
+  
+  - 7.$ `cd yay` direct to yay folder
+  
+  - 8.$ `makepkg -si` build the package and proceed with the installation
+  
+  - 9.$ `yay -Syy pamac-aur-git` install pamac
+  
+  - 10.$ `sudo pacman -S gnome ` install gnome
+  
+  - 11.$ `sudo systemctl enable gdm.service` enable gnome at startup
+  
+  - 12.$ `sudo reboot` reboot the system
 ```
+
 ### 4. Fix Gnome Terminal
 ```
   - 1.   control + alt + F3, enter into tty3 
@@ -267,33 +278,9 @@ https://archlinux.org/download/
   - 5.$ `sudo fc-cache -f -v`
   
   - 6.$ `reboot` to reboot the system
+ 
 ```
-
-### 5. Preparing pamac for the script
-
-- If you want to see the applications to be installed have a look at the features section at the beginning of the readme
- ```
-  - 1. search into gnome apps for an app called add/remove software 
-  
-  - 2. once opened add/remove software click into the options points on the top right and click preferences
-  
-  - 3. activate the aur third party
-  
-  - 4. comeback to the option points and click refresh data base
-```
-### 6. Installing apps
-
-- Installing my personal script which install my personal app list
-- If you want to see the applications to be installed have a look at the features section at the beginning of the readme
-```  
-  - 1. Open gnome terminal and write $`cd /home/jose/ArchLinux-config-and-post-install-/` to move into folder script
-  
-  - 2. Tlp will be configured to use powersave governor (recommended for laptops), if u want to change edit file using nano.
-  
-  - 3.$ `sudo bash app_configfiles_services.sh` to run the script
-```
-
-### 7. Adding Windows boot to group (only if you have windows installed)
+### 5. Adding Windows boot to group (only if you have windows installed)
 ```  
   - 1.$  `sudo nano /usr/sbin/update-grub` to create update-grub script
   
@@ -313,14 +300,12 @@ https://archlinux.org/download/
   - 6.$ `sudo update-grub` to run update-grub script
 ```
 
-### 8. Adding more languages and keybord layouts
+### 6. Adding more languages and keybord layouts
 ```
   - 1.$ `sudo nano /etc/locale.gen and uncomment the language which you want to install
   
   - 2.$ `locale-gen` to generate the locales. Once you did it you can enable the language added in gnome settings
 ```
-
-
 
 ## ArchLinux Update
 
