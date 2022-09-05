@@ -4,50 +4,6 @@ text guide configuration and some scripts to automate the process of config Arch
 ## ArchLinux-DownloadPage
 https://archlinux.org/download/
 
-## Features
--Release: `2022.03.01`
-
--Bios: `Uefi`
-
--File System: `Btrfs`
-
--System Backups: `Btrfs snaphsots`
-
--Terminal: `Gnome`
-
--Package Manager: `pacman, pamac, aur`
-
--Power Saving utility: `tlp`
-
--Gui Governor: `cpupower-gui-git`
-
--Display Server Protocol:` Wayland`
-
--GUI: `Gnome` `Sway`
-
--GNOME EXTENSION: `vitals` `dash to dock` `app indicator`
-
--Text Editor: `VIM`
-
--IDE: `Visual Studio, Eclipse`
-
--Virtualization tool: `Kvm, Qemu, Virt-Manager`
-
--Browser: Microsoft `Edge, Chromium`
-
--Email Client: `Thunderbird`
-
--Music Service: `Spotify`
-
--Chat Service:` Whatsapp, Discord`
-
--Office Suite: `Microsoft Office(Virt-Manager), LibreOffice`
-
--Image Editor: `Gimp`
-
--Bootable Utility: `Ventoy, Balena Etcher`
-
--Games: `Steam`
 
 ## Archlinux install
 ### 1.Boot ArchLinux ISO on your system
@@ -79,7 +35,7 @@ https://archlinux.org/download/
 
   - 6. Finally write $ `exit` to back to root user and write $`ping 8.8.8.8` to test your connection
 ```
-### 4.Btrfs FileSystem config
+### 4.FileSystem config
 
 - Before to start with the partitioning we must make sure that the device  have no one partition, if not you can use fdisk utility to format disk
 
@@ -161,31 +117,10 @@ https://archlinux.org/download/
 ```
   - 12.$ `mkfs.fat -F32 /dev/*sda1*` make fat32 file system, replace *sda1* with your device name used for (/boot) 
   - 13.$ `mkswap /dev/sda2` ; swapon /dev/*sda2*` make swap file system, replace *sda2* with your device name used for (/swap)
-  - 14.$ `mkfs.btrfs /dev/*sda3*` make btrfs file system, replace *sda3* with your device name used for (/(root))
+  - 14.$ `mkfs.ext4 /dev/*sda3*` make ext4 file system, replace *sda3* with your device name used for (/(root))
 ```
 
-- Btrfs Features Personal setup
-```
-  - 15. Create the following Subvolume scheme
-    - $ `sudo mount /dev/*sda3* /mnt mount btrfs partition in the mnt directory 
-
-    - $ `btrfs su cr /mnt/@`
-  
-    - $ `btrfs su cr /mnt/@home`
-
-    - $ `btrfs su cr /mnt/@.snapshots`
-
-  - 16.$ `umount /mnt` unmount  mnt folder
-
-  - 17.$ `mkdir /mnt/{boot,home,.snapshots}` create the folders where subvolumes will mounted.
-
-  - 18. Mount these partitions
-  
-    - $ `mount -o noatime,compress=zstd,discard=async,subvol=@ /dev/*sda3* /mnt`
-
-    - $ `mount -o noatime,compress=zstd,discard=async,subvol=@home /dev/*sda3* /mnt/home`
-     
-    - $ `mount -o noatime,compress=zstd,discard=async,subvol=@.snapshots /dev/*sda3* /mnt/.snapshots`
+  - 17.$ `mkdir -nt  reate folder where boot partition will be mounted
 
   - 19.$ `mount /dev/*sda1* /mnt/boot` mount boot partition
 
