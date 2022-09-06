@@ -19,21 +19,23 @@ https://archlinux.org/download/
 
 - If you use Ethernet rj45 connection you dont need any configuration
 
-- To setup a wireless network you need use ***iwctl***
+- To setup a wireless network you need use **iwctl**
 
 - iwtcl step by step to connect to a WPA
 ```
-  - 1. *** $ iwctl *** to get a interactive prompt
+  - 1. $ iwctl -> to get a interactive prompt
 
-  - 2. $ `device list` to know your wireless device name, on the next commands where it says *device* replace with your device name
+  - 2. $ device list -> know your wireless device name
 
-  - 3. $ `station *device* scan` scan for networks
+  - 3. $ station *device* scan -> scan for networks
 
-  - 4. $ `station *device* get-networks` list available networks
+  - 4. $ station *device* get-networks -> list available networks
 
-  - 5. $ `station *device* connect *SSID*` Connect to a specific SSID, on SSID write the network you want to connect
+  - 5. $ station *device* connect *SSID* -> connect to a specific SSID, on SSID write the network you want to connect
 
-  - 6. Finally write $ `exit` to back to root user and write $`ping 8.8.8.8` to test your connection
+  - 6. $ exit -> back to root user and write $`ping 8.8.8.8` to test your connection
+  
+  - 7. $ ping 8.8.8.8 -> test the connection
 ```
 ### 4.FileSystem config
 
