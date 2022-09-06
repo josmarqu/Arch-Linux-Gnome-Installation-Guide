@@ -1,29 +1,29 @@
-# ArchLinux-config-and-post-install
-text guide configuration and some scripts to automate the process of config ArchLinux to my requirements
+# Arch-Linux-config-and-post-install
+Arch Linux installation text guide
 
-## ArchLinux-DownloadPage
+## Arch Linux DownloadPage
 https://archlinux.org/download/
 
 
-## Archlinux install
-### 1.Boot ArchLinux ISO on your system
+## Arch Linux install
+### 1.Boot Arch Linux ISO 
 
-- Once in ArchLinux Grub select ArchLinux install
+- Once in Arch Linux Grub select Arch Linux install
 
 ### 2.Check if Uefy mode enabled
 
 - `ls /sys/firmware/efi/efivars`
-- If the directory is empty mean that your system is running legacy mode, instead if have files mean that your system is in Uefy mode.
+- If the directory is empty mean that your system is running in legacy mode, instead if have files mean that your system is in Uefy mode.
 
 ### 3.Internet Connection
 
 - If you use Ethernet rj45 connection you dont need any configuration
 
-- To setup a wireless network you need use `iwctl`
+- To setup a wireless network you need use ***iwctl***
 
 - iwtcl step by step to connect to a WPA
 ```
-  - 1. $ `iwctl` to get a interactive prompt
+  - 1. *** $ iwctl *** to get a interactive prompt
 
   - 2. $ `device list` to know your wireless device name, on the next commands where it says *device* replace with your device name
 
