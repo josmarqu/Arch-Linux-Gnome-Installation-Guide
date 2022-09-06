@@ -23,7 +23,7 @@ https://archlinux.org/download/
 
 - iwtcl step by step to connect to a WPA
 ```
-  - 1. $ iwctl -> to get a interactive prompt
+  - 1. $ iwctl -> get a interactive prompt
 
   - 2. $ device list -> know your wireless device name
 
@@ -33,7 +33,7 @@ https://archlinux.org/download/
 
   - 5. $ station *device* connect *SSID* -> connect to a specific SSID, on SSID write the network you want to connect
 
-  - 6. $ exit -> back to root user and write $`ping 8.8.8.8` to test your connection
+  - 6. $ exit -> back to root user and write $`ping 8.8.8.8` test your connection
   
   - 7. $ ping 8.8.8.8 -> test the connection
 ```
@@ -41,21 +41,21 @@ https://archlinux.org/download/
 
 - Before to start with the partitioning we must make sure that the device  have no one partition, if not you can use fdisk utility to format disk
 
-- To manage partitions we use `fdisk`
+- To manage partitions we use **fdisk**
 ```
-  - 1.$ `fdisk -l` use this command to look at your file strutcture and find the name of the partition where you want to insall Archlinux on
+  - 1.$ fdisk -l -> look at your file strutcture and find the name of the partition where you want to install Arch Linux on
 
-  - 2.$ `fdisk /dev/*sda*` once we know the partiton name, write this command to enter into fdisk Command propmt
+  - 2.$ fdisk /dev/*sda* -> enter into fdisk command prompt
 
-  - 3. F Command to list free unpartitioned space
+  - 3.$ F -> list free unpartitioned space
 
-  - 4. If you drive have more than one partition, delete them using d Command
+  - 4.$ d -> delete specific partition
 
-  - 5. Once you have only one partition create the GPT partition table using g Command
+  - 5.$ g -> create the GPT partition table 
 ```
 - After perfoming the checks, we move on to partition the disk
 
-- Needed partitions to install ArchLinux
+- Needed partitions to install Arch Linux
 ```
   - /boot/efi partition (300MB size)
 
@@ -63,11 +63,13 @@ https://archlinux.org/download/
 
   - /swap (optional)
 ```
-- Partitioning using fdisk step by step
+- Partitioning using **fdisk** step by step
 ```
   - 6. Repeat *1 and 2* if you exit of fdisk prompt
 
-  - 7. Use n Command to create the next partitions
+  - 7.$ n ->  create  partition
+  
+  - 8. Create the next partitions
 
     - Partition 1 (/boot)
 
@@ -93,13 +95,15 @@ https://archlinux.org/download/
 
       - Last sector= remaining space
    
-  - 8. Use w Command to write the changes
+  - 9.$ w -> write the changes
 ```
 - Change filetype partitions
 ```
   - 9. Repeat *1 and 2* if you exit of fdisk prompt
   
-  - 10. Use t Command to change filetype partions as given below
+  - 10.$ t -> change filetype partitions
+  
+  - 11 -> change filetype partitions as given below
   
     - Partition 1 (/boot)
     
@@ -113,16 +117,16 @@ https://archlinux.org/download/
       
       - Partition type or alias= 1
 
-  - 11. Use w Command to write the changes  
+   - 12.$ w -> write the changes
 ```
 - Format partitions with the respective file systems.
 ```
-  - 12.$ `mkfs.fat -F32 /dev/*sda1*` make fat32 file system, replace *sda1* with your device name used for (/boot) 
-  - 13.$ `mkswap /dev/sda2` ; swapon /dev/*sda2*` make swap file system, replace *sda2* with your device name used for (/swap)
-  - 14.$ `mkfs.ext4 /dev/*sda3*` make ext4 file system, replace *sda3* with your device name used for (/(root))
-  - 15.$ `mount /dev/sda3 /mnt` mount the root volume to /mnt
-  - 16.$ `mount --mkdir /dev/*sda1* /mnt/boot` mount boot partition
-  - 17.$ `lsblk` verify that you have mounted everything correctly  
+  - 12.$ mkfs.fat -F32 /dev/*sda1* -> make fat32 file system, replace *sda1* with your device name used for (/boot) 
+  - 13.$ mkswap /dev/sda2 ; swapon /dev/*sda2* -> make swap file system, replace *sda2* with your device name used for (/swap)
+  - 14.$ mkfs.ext4 /dev/*sda3* -> make ext4 file system, replace *sda3* with your device name used for (/(root))
+  - 15.$ mount /dev/sda3 /mnt -> mount the root volume to /mnt
+  - 16.$ mount --mkdir /dev/*sda1* /mnt/boot -> mount boot partition
+  - 17.$ lsblk -> verify that you have mounted everything correctly  
 ```
 ### 5.Installing the base system
 
@@ -130,27 +134,27 @@ https://archlinux.org/download/
 
 ### 6.Generate fstab
 
-- `fstab` is used to define how disk partitions should be mounted into the filesystem
+- **fstab** is used to define how disk partitions should be mounted into the filesystem
 ```
-  - 1.$ `genfstab -U /mnt >> /mnt/etc/fstab` write this to generate the fstab
+  - 1.$ genfstab -U /mnt >> /mnt/etc/fstab -> write this to generate the fstab
 
-  - 2.$ `cat /mnt/etc/fstab` to verify fstab entries
+  - 2.$ cat /mnt/etc/fstab -> verify fstab entries
 ```
 ### 7.Chroot into install
 
-- $ `arch-chroot /mnt` enter in your Arch install to set it up
+`$ arch-chroot /mnt -> enter in Arch Linux install to set it up`
 
 ### 8.Setting timezone
 
-- $ `ln -sf /usr/share/zoneinfo/*Europe*/*Madrid* /etc/localtime` set your timezone 
+`$ ln -sf /usr/share/zoneinfo/*Europe*/*Madrid* /etc/localtime -> set timezone` 
 
 ### 9.Network configuration
 ```
-  - 1.$ `echo *JosePc* >> /etc/hostname` replace your hostname
+  - 1.$ echo *JosePc* >> /etc/hostname -> replace your hostname
   
-  - 2.$ `pacman -Syu nano`  install nano text editor
+  - 2.$ pacman -Syu nano -> install nano text editor
   
-  - 2.$ ` nano /etc/hosts`  edit host configuration adding the following lines
+  - 2.$ nano /etc/hosts -> edit host configuration adding the following lines
 
     - 127.0.0.1     localhost
 
@@ -160,30 +164,30 @@ https://archlinux.org/download/
 ```
 ### 10.Setting password for root user
 
-- $`passwd`
+`$ passwd`
 
 ### 11.Installing GRUB
 ```
-  - 1.$ `pacman -S grub` download grub
+  - 1.$ pacman -S grub -> download grub
   
-  - 3.$ `pacman -S efibootmgr`  install efi boot manager
+  - 3.$ pacman -S efibootmgr -> install efi boot manager
  
-  - 4.$ `grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id = Arch` to install grub
+  - 4.$ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id = Arch -> install grub
 
-  - 5.$ `grub-mkconfig -o /boot/grub/grub.cfg`  generate grub config file
+  - 5.$ grub-mkconfig -o /boot/grub/grub.cfg ->  generate grub config file
 ```
-### 12.Creating user
+### 12.Creating user with su privileges
 ```
-  - 1.$ `useradd -mg wheel *jose*` adding user
+  - 1.$ useradd -mg wheel *jose* -> adding user
   
-  - 2.$ `passwd jose` giving  a password
+  - 2.$ passwd jose -> giving  a password for a specific user
 
-  - 3.$ `pacman -S sudo` install sudo 
+  - 3.$ pacman -S sudo -> install sudo 
   
-  - 4.$ `nano /etc/sudoers` and inside uncomment the line which says %wheel ALL=(ALL) ALL, then save and exit
+  - 4.$ nano /etc/sudoers -> uncomment the line which says %wheel ALL=(ALL) ALL, then save and exit
 ```
 
-### 14.Install and enable NetworkManager
+### 13.Install and enable NetworkManager
 ```
   - 1.$ `pacman -S networkmanager` install network manager
 
@@ -195,7 +199,7 @@ https://archlinux.org/download/
   
 ```
 
-### 15.Restarting into Arch
+### 14.Restarting into Arch
 ```
   - 1.$ `exit` exiting the installation
   
