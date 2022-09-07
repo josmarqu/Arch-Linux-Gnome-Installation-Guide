@@ -189,13 +189,13 @@ https://archlinux.org/download/
 
 ### 13.Install and enable NetworkManager
 ```
-  - 1.$ `pacman -S networkmanager` install network manager
+  - 1.$ pacman -S networkmanager -> install network manager
 
-  - 2.$ `systemctl enable NetworkManager` enable network manager at system boot
+  - 2.$ systemctl enable NetworkManager -> enable network manager at system boot
   
-  - 3.$ `pacman -S dhcpcd iwd` you need it if you want to use wifi
+  - 3.$ pacman -S dhcpcd iwd -> only for wireless network
   
-  - 4.$ `systemctl enable iwd` you need it if you want to use wifi
+  - 4.$ systemctl enable iwd -> only for wireless network
   
 ```
 
