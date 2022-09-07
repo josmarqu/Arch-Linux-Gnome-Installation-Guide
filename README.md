@@ -216,15 +216,15 @@ https://archlinux.org/download/
 
 ### 1. Wifi setup (only if you have wireless card)
 
-- Once booted archlinux is time to realiza the post install
+- Once booted archlinux is time to make the post install
 ```
-  - 1.$ `dhcpcd`  to active wireless dhcpcd
+  - 1.$ dhcpcd -> active wireless dhcpcd
   
-  - 2.$ `dhcpcd *wlan0*` replace *wlan0* with your wireless card devince name, to find out wich one is use ip link
+  - 2.$ dhcpcd *wlan0* -> replace *wlan0* with your wireless card devince name, to find out wich one is use ip link
   
-  - 3.$ `iwctl` to connect to wpa, if you dont remember how iwctl works go back to 3th step
+  - 3.$ iwctl -> connect to wpa, if you dont remember how iwctl works go back to 3th step
   
-  - 4.$ `sudo nano /etc/iwd/main.conf` write the bellow text to make the dhcp config
+  - 4.$ sudo nano /etc/iwd/main.conf -> write the bellow text to make the dhcp config
      [General]
      EnableNetworkConfiguration=true
 
@@ -233,86 +233,84 @@ https://archlinux.org/download/
 ```
 
 ### 2. Nvidia drivers setup (only if you have nvidia graphic)
-
-- Once booted archlinux is time to realiza the post install
 ```
-  - 1.$ `pacman -Syu nvidia` install nvidia drivers
+  - 1.$ pacman -Syu nvidia -> install nvidia drivers
   
-  - 2.$ `pacman -Syu nvidia-settings`  install nvidia driver configuration tool
+  - 2.$ pacman -Syu nvidia-settings ->  install nvidia driver configuration tool
   
-  - 3.$ `reboot` reboot the system
+  - 3.$ reboot -> reboot the system 
 ```
 ### 3. Installing yay, Pamac and Gnome 
  
  - Installing my personal script which install pamac, yay and gnome interface 
 ```
-  - 1.$ `sudo pacman -S  base-devel` install essential packages
+  - 1.$ sudo pacman -S  base-devel -> install essential packages
   
-  - 2.$ `cd /var/cache/pacman/pkg`  direct  where the pacman packages are stored 
+  - 2.$ cd /var/cache/pacman/pkg ->  direct  where the pacman packages are stored 
   
-  - 3.$ `sudo mkdir /var/cache/pacman/pkg/yay` create a folder where yay will be stored  
+  - 3.$ sudo mkdir /var/cache/pacman/pkg/yay -> create a folder where yay will be stored  
   
-  - 4.$ `sudo pacman -Syu git` install git
+  - 4.$ sudo pacman -Syu git -> install git
   
-  - 5.$ `sudo git clone https://aur.archlinux.org/yay.git` clone yay data to later install it
+  - 5.$ sudo git clone https://aur.archlinux.org/yay.git -> clone yay data to later install it
   
-  - 6.$ `sudo chown -R *jose*:users /var/cache/pacman/pkg/yay` give yay folder permissions for install the package
+  - 6.$ sudo chown -R *jose*:users /var/cache/pacman/pkg/yay -> give yay folder permissions for install the package
   
-  - 7.$ `cd yay` direct to yay folder
+  - 7.$ cd yay -> direct to yay folder
   
-  - 8.$ `makepkg -si` build the package and proceed with the installation
+  - 8.$ makepkg -si -> build the package and proceed with the installation
   
-  - 9.$ `yay -Syy pamac-aur-git` install pamac
+  - 9.$ yay -Syy pamac-aur-git -> install pamac
   
-  - 10.$ `sudo pacman -S gnome ` install gnome
+  - 10.$ sudo pacman -S gnome -> install gnome
   
-  - 11.$ `sudo systemctl enable gdm.service` enable gnome at startup
+  - 11.$ sudo systemctl enable gdm.service -> enable gnome at startup
   
-  - 12.$ `sudo reboot` reboot the system
+  - 12.$ sudo reboot -> reboot the system
 ```
 
 ### 4. Fix Gnome Terminal
 ```
   - 1.   control + alt + F3, enter into tty3 
  
-  - 2.$ `sudo locale-gen --purge`  
+  - 2.$ sudo locale-gen --purge  
   
-  - 3.$ `sudo locale-gen`
+  - 3.$ sudo locale-gen
   
-  - 4.$ `localectl set-locale LANG="en_US.UTF-8"`
+  - 4.$ localectl set-locale LANG="en_US.UTF-8"
   
-  - 5.$ `sudo fc-cache -f -v`
+  - 5.$ sudo fc-cache -f -v
   
-  - 6.$ `reboot` to reboot the system
+  - 6.$ reboot -> reboot the system
  
 ```
 ### 5. Adding Windows boot to group (only if you have windows installed)
 ```  
-  - 1.$  `sudo nano /usr/sbin/update-grub` to create update-grub script
+  - 1.$ sudo nano /usr/sbin/update-grub ->  create update-grub script
   
-  - 2.$ write bellow lines
+  - 2. write bellow lines
     - #!/bin/sh
     - set -e
     - exec grub-mkconfig -o /boot/grub/grub.cfg "$@"
   
-  - 2.$ `sudo chown root:root /usr/sbin/update-grub` changing file ownership
+  - 2.$ sudo chown root:root /usr/sbin/update-grub -> changing file ownership
   
-  - 3.$ `sudo chmod 755 /usr/sbin/update-grub` changing file permissions
+  - 3.$ sudo chmod 755 /usr/sbin/update-grub -> changing file permissions
   
-  - 4.$ `sudo pacman -S os-prober`  utility that is used to find installed os in your system
+  - 4.$ sudo pacman -S os-prober ->  utility that is used to find installed os in your system
   
-  - 5.$ `sudo nano /etc/default/grub` uncomment GRUB_DISABLE_OS_PROBER=false and modify timeout from 5 to 30
+  - 5.$ sudo nano /etc/default/grub -> uncomment GRUB_DISABLE_OS_PROBER=false and modify timeout from 5 to 30
   
-  - 6.$ `sudo update-grub` to run update-grub script
+  - 6.$ sudo update-grub ->  run update-grub script
 ```
 
 ### 6. Adding more languages and keybord layouts
 ```
-  - 1.$ `sudo nano /etc/locale.gen and uncomment the language which you want to install
+  - 1.$ sudo nano /etc/locale.gen -> once into the file, uncomment the language which you want to install
   
-  - 2.$ `locale-gen` to generate the locales. Once you did it you can enable the language added in gnome settings
+  - 2.$ locale-gen  -> generate the locales, once you did it you can enable the language added in gnome settings
 ```
 
 ## ArchLinux Update
 
-- `sudo pacman -Syu` this will update the pacman repositories for package updates 
+- sudo pacman -Syu -> this will update the pacman repositories for package updates 
