@@ -241,8 +241,6 @@ https://archlinux.org/download/
   - 3.$ reboot -> reboot the system 
 ```
 ### 3. Installing yay, Pamac and Gnome 
- 
- - Installing my personal script which install pamac, yay and gnome interface 
 ```
   - 1.$ sudo pacman -S  base-devel -> install essential packages
   
