@@ -37,7 +37,7 @@ https://archlinux.org/download/
   
   - 7. $ ping 8.8.8.8 -> test the connection
 ```
-### 4.FileSystem config
+### 4.File system 
 
 - Before to start with the partitioning we must make sure that the device  have no one partition, if not you can use fdisk utility to format disk
 
