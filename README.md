@@ -269,7 +269,7 @@ https://archlinux.org/download/
 
 ### 4. Fix Gnome Terminal
 ```
-  - 1.   control + alt + F3, enter into tty3 
+  - 1. control + alt + F3, enter into tty3 
  
   - 2.$ sudo locale-gen --purge  
   
