@@ -1,5 +1,5 @@
 # Arch-Linux-Gnome-Installation-Guide
-Arch Linux installation text guide using Gnome desktop enviroment.
+Arch Linux installation text guide with Gnome desktop enviroment.
 
 ## Arch Linux DownloadPage
 https://archlinux.org/download/
