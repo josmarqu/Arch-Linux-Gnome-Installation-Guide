@@ -308,6 +308,6 @@ https://archlinux.org/download/
   - 2.$ locale-gen  -> generate the locales, once you did it you can enable the language added in gnome settings
 ```
 
-## ArchLinux Update
+## Arch Linux Update
 
 - sudo pacman -Syu -> this will update the pacman repositories for package updates 
