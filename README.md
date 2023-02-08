@@ -18,7 +18,7 @@ https://archlinux.org/download/
 
 - If you use Ethernet rj45 connection you dont need any configuration
 
-- To setup a wireless network you need use **iwctl**
+- To setup a wireless network use **iwctl**
 
 - iwtcl step by step to connect to a WPA
 ```
@@ -38,11 +38,11 @@ https://archlinux.org/download/
 ```
 ### 4.File system 
 
-- Before to start with the partitioning we must make sure that the device  have no one partition, if not you can use fdisk utility to format disk
+- Before to start with the partitioning make sure that the device  have no one partition, if not use fdisk utility to format disk
 
-- To manage partitions we use **fdisk**
+- To manage partitions use **fdisk**
 ```
-  - 1.$ fdisk -l -> look at your file strutcture and find the name of the partition where you want to install Arch Linux on
+  - 1.$ fdisk -l -> look at the file strutcture and find the name of the partition wanted to install Arch Linux
 
   - 2.$ fdisk /dev/*sda* -> enter into fdisk command prompt
 
@@ -52,7 +52,6 @@ https://archlinux.org/download/
 
   - 5.$ g -> create the GPT partition table 
 ```
-- After perfoming the checks, we move on to partition the disk
 
 - Needed partitions to install Arch Linux
 ```
@@ -120,12 +119,12 @@ https://archlinux.org/download/
 ```
 - Format partitions with the respective file systems.
 ```
-  - 12.$ mkfs.fat -F32 /dev/*sda1* -> make fat32 file system, replace *sda1* with your device name used for (/boot) 
-  - 13.$ mkswap /dev/sda2 ; swapon /dev/*sda2* -> make swap file system, replace *sda2* with your device name used for (/swap)
-  - 14.$ mkfs.ext4 /dev/*sda3* -> make ext4 file system, replace *sda3* with your device name used for (/(root))
+  - 12.$ mkfs.fat -F32 /dev/*sda1* -> make fat32 file system, replace *sda1* with the device name used for (/boot) 
+  - 13.$ mkswap /dev/sda2 ; swapon /dev/*sda2* -> make swap file system, replace *sda2* with the device name used for (/swap)
+  - 14.$ mkfs.ext4 /dev/*sda3* -> make ext4 file system, replace *sda3* with the device name used for (/(root))
   - 15.$ mount /dev/sda3 /mnt -> mount the root volume to /mnt
   - 16.$ mount --mkdir /dev/*sda1* /mnt/boot -> mount boot partition
-  - 17.$ lsblk -> verify that you have mounted everything correctly  
+  - 17.$ lsblk -> verify that all the partitions are mounted and everything is correctly  
 ```
 ### 5.Installing the base system
 
@@ -149,7 +148,7 @@ https://archlinux.org/download/
 
 ### 9.Network configuration
 ```
-  - 1.$ echo *JosePc* >> /etc/hostname -> replace your hostname
+  - 1.$ echo *JosePc* >> /etc/hostname -> replace *JosePc* with the name desired for the hostname
   
   - 2.$ pacman -Syu nano -> install nano text editor
   
@@ -177,9 +176,9 @@ https://archlinux.org/download/
 ```
 ### 12.Creating user with su privileges
 ```
-  - 1.$ useradd -mg wheel *jose* -> adding user
+  - 1.$ useradd -mg wheel *jose* -> replace *jose* with the desired name for the main user
   
-  - 2.$ passwd jose -> giving  a password for a specific user
+  - 2.$ passwd jose -> giving a password for a specific user
 
   - 3.$ pacman -S sudo -> install sudo 
   
@@ -204,9 +203,9 @@ https://archlinux.org/download/
   
   - 2.$ `umount -l /mnt` unmounting all drives
   
-  - 3.$ `reboot` to reboot the system, when the system wake enter into bios and you can boot arch booting your drive
+  - 3.$ `reboot` to reboot the system, when the system wake enter into bios and boot arch selecting the drive where is installed as first in boot order
   
-  - 4.$ Search grub.efi into Efi directory and select to default boot system in Bios settings 
+  - 4.$ If the bios is not able to detect the installation search grub.efi into Efi directory and select to default boot system in Bios settings 
 ```
 
 ## ArchLinux Post Install
@@ -219,9 +218,9 @@ https://archlinux.org/download/
 ```
   - 1.$ dhcpcd -> active wireless dhcpcd
   
-  - 2.$ dhcpcd *wlan0* -> replace *wlan0* with your wireless card devince name, to find out wich one is use ip link
+  - 2.$ dhcpcd *wlan0* -> replace *wlan0* with the wireless card devince name, to find out wich one is use ip link
   
-  - 3.$ iwctl -> connect to wpa, if you dont remember how iwctl works go back to 3th step
+  - 3.$ iwctl -> connect to wpa, if needed check how iwctl works going back to 3th step
   
   - 4.$ sudo nano /etc/iwd/main.conf -> write the bellow text to make the dhcp config
      [General]
@@ -231,7 +230,7 @@ https://archlinux.org/download/
      NameResolvingService=systemd
 ```
 
-### 2. Nvidia drivers setup (only if you have nvidia graphic)
+### 2. Nvidia drivers setup (only if nvidia graphic)
 ```
   - 1.$ pacman -Syu nvidia -> install nvidia drivers
   
@@ -251,7 +250,7 @@ https://archlinux.org/download/
   
   - 5.$ sudo git clone https://aur.archlinux.org/yay.git -> clone yay data to later install it
   
-  - 6.$ sudo chown -R *jose*:users /var/cache/pacman/pkg/yay -> give yay folder permissions for install the package
+  - 6.$ sudo chown -R *jose*:users /var/cache/pacman/pkg/yay -> give yay folder permissions for install the package, replace *jose* with the user name set
   
   - 7.$ cd yay -> direct to yay folder
   
@@ -294,7 +293,7 @@ https://archlinux.org/download/
   
   - 3.$ sudo chmod 755 /usr/sbin/update-grub -> changing file permissions
   
-  - 4.$ sudo pacman -S os-prober ->  utility that is used to find installed os in your system
+  - 4.$ sudo pacman -S os-prober ->  utility that is used to find installed os in the system
   
   - 5.$ sudo nano /etc/default/grub -> uncomment GRUB_DISABLE_OS_PROBER=false and modify timeout from 5 to 30
   
@@ -303,9 +302,9 @@ https://archlinux.org/download/
 
 ### 6. Adding more languages and keybord layouts
 ```
-  - 1.$ sudo nano /etc/locale.gen -> once into the file, uncomment the language which you want to install
+  - 1.$ sudo nano /etc/locale.gen -> once into the file, uncomment the language  wanted to install
   
-  - 2.$ locale-gen  -> generate the locales, once you did it you can enable the language added in gnome settings
+  - 2.$ locale-gen  -> generate the locales, once did it, enable the language added in gnome settings
 ```
 
 ## Arch Linux Update
