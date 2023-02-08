@@ -1,9 +1,8 @@
-# Arch-Linux-config-and-post-install
-Arch Linux installation text guide
+# Arch-Linux-Gnome-Installation-Guide
+Arch Linux installation text guide using Gnome desktop enviroment.
 
 ## Arch Linux DownloadPage
 https://archlinux.org/download/
-
 
 ## Arch Linux install
 ### 1.Boot Arch Linux ISO 
